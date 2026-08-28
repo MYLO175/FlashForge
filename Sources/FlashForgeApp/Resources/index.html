@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlashForge</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-brand" onclick="nav('home')">🧠 <span class="brand-dark">Flash</span>Forge</div>
+  <div class="breadcrumb" id="bc"></div>
+  <div class="navbar-actions" id="nav-actions"></div>
+  <button class="btn-icon" onclick="modalSettings()" title="Settings" style="margin-left:4px;flex-shrink:0">⚙️</button>
+</nav>
+
+<div id="app"></div>
+<div id="modal-root"></div>
+<div id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

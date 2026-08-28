@@ -1,0 +1,13 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+xcuserdata/
+*.xcuserstate
+.playwright-cli/
+output/
+
+# Personal study data and exports must never enter source control.
+flashforge-backup-*.json
+flashforge-sets-*.json
+*.backup.json
