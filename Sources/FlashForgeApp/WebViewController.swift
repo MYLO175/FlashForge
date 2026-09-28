@@ -62,7 +62,16 @@ final class WebViewController: NSViewController {
     }
 
     private func loadApplication() {
-        guard let indexURL = Bundle.module.url(forResource: "index", withExtension: "html") else {
+        let bundleName = "FlashForge_FlashForgeApp.bundle"
+        let resourceBundleURLs = [
+            Bundle.main.resourceURL?.appendingPathComponent(bundleName, isDirectory: true),
+            Bundle.main.bundleURL.appendingPathComponent(bundleName, isDirectory: true)
+        ].compactMap { $0 }
+        let resourceBundle = resourceBundleURLs.lazy
+            .compactMap { Bundle(path: $0.path) }
+            .first
+
+        guard let indexURL = resourceBundle?.url(forResource: "index", withExtension: "html") else {
             presentLoadError("The bundled interface is missing.")
             return
         }
